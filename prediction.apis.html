@@ -467,6 +467,23 @@
 <dd></dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="prediction.apis.data_management_engine.get_cassandra_to_mongo">
+<span class="sig-prename descclassname"><span class="pre">prediction.apis.data_management_engine.</span></span><span class="sig-name descname"><span class="pre">get_cassandra_to_mongo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">auth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">database</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">collection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sql</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prediction.apis.data_management_engine.get_cassandra_to_mongo" title="Link to this definition">#</a></dt>
+<dd><p>Execute a Cassandra SQL query and ingest the data to a MongoDB collection. The ecosystem server should be configured
+to connect to the target Cassandra servers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>auth</strong> – Token for accessing the ecosystem-server. Created using jwt_access.</p></li>
+<li><p><strong>database</strong> – Database to ingest the data to</p></li>
+<li><p><strong>collection</strong> – Collection to ingest the data to</p></li>
+<li><p><strong>sql</strong> – Cassandra SQL query to execute</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="prediction.apis.data_management_engine.get_data">
 <span class="sig-prename descclassname"><span class="pre">prediction.apis.data_management_engine.</span></span><span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">auth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">database</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">collection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projections</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prediction.apis.data_management_engine.get_data" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
@@ -715,12 +732,144 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="prediction.apis.deployment_management.create_deployment">
 <span class="sig-prename descclassname"><span class="pre">prediction.apis.deployment_management.</span></span><span class="sig-name descname"><span class="pre">create_deployment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">auth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deployment_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plugin_pre_score_class</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plugin_post_score_class</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project_status</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">budget_tracker</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">complexity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Low'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">performance_expectation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'High'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_configuration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">setup_offer_matrix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multi_armed_bandit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">whitelist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_selector</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pattern_selector</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logging_collection_response</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ecosystemruntime_response'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logging_collection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ecosystemruntime'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logging_database</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'logging'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mongo_connect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'mongodb://ecosystem_user:EcoEco321&#64;ecosystem-server:54445/?authSource=admin'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mongo_server_port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ecosystem-server:54445'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mongo_ecosystem_password</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'EcoEco321'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mongo_ecosystem_user</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ecosystem_user'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scoring_engine_path_dev</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'http://ecosystem-runtime:8091'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scoring_engine_path_test</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'http://ecosystem-runtime2:8091'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scoring_engine_path_prod</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'http://ecosystem-runtime3:8091'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">models_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'/data/deployed/'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'/data/'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">build_server_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">git_repo_path_branch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">download_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">git_repo_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameter_access</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">corpora</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extensive_validation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prediction.apis.deployment_management.create_deployment" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><blockquote>
+<div><p>Create or update a deployment linked to an existing project.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>auth</strong> – Token for accessing the ecosystem-server. Created using the jwt_access package.</p></li>
+<li><p><strong>project_id</strong> – The name of the project to add the deployment step to.</p></li>
+<li><p><strong>deployment_id</strong> – The name of the deployment step that is to be created.</p></li>
+<li><p><strong>description</strong> – Description of the deployment step</p></li>
+<li><p><strong>version</strong> – The version of the deployment step being created. The combination of version and deployment_id cannot already exists within the deployment, i.e. you cannot overwrite an existing deployment</p></li>
+<li><p><strong>project_status</strong> – Specifies the environment to which the deployment should be sent when it is pushed. The allowed values are experiment, validate, production, disable.</p></li>
+<li><p><strong>plugin_pre_score_class</strong> – The name of the pre score logic class to be used in the runtime. Only default classes can be selected here. To create custom classes please use the ecosystem-runtime-locabuild repo or edit the classes in the workbench. The allowed values are PrePredictCustomer.java</p></li>
+<li><p><strong>plugin_post_score_class</strong> – The name of the post score logic class to be used in the runtime. Only default classes can be selected here. To create custom classes please use the ecosystem-runtime-locabuild repo or edit the classes in the workbench. The allowed values are PostScoreBasic.java, PostScoreRecommender.java, PlatformDynamicEngagement.java, PostScoreRecommenderOffers.java, PostScoreRecommenderMulti.java and PostScoreNetwork.java</p></li>
+<li><p><strong>budget_tracker</strong> – A dictionary of parameters required for managing the budget tracker functionality TODO &lt;Need input from Jay on how this actually works&gt;</p></li>
+<li><p><strong>complexity</strong> – Indicate the expected complexity of the deployment, allowed values are Low, Medium and High</p></li>
+<li><p><strong>performance_expectation</strong> – Indicate the expected performance of the deployment, allowed values are Low, Medium and High</p></li>
+<li><p><strong>model_configuration</strong> – A dictionary of the parameters specifying the models used in the project. The key item in the dictionary is models_load - a comma separated string of the names of the models to be used in the deployment. model_note and model_outline fields can also be added for tracking purposes</p></li>
+<li><p><strong>setup_offer_matrix</strong> – A dictionary of parameters specifying the location of the offer matrix - a dataset containing information about the offers that could be recommended. The dictionary must contain a datasource, database, collection and offer_lookup_id. Datasource can be one of mongodb, cassandra or presto. Database and collection specify the location of the offer_matrix in the datasource. Offer_lookup_id is the name of the column which contains the unique identifier for the offers - allowed values are offer, offer_name and offer_id</p></li>
+<li><p><strong>multi_armed_bandit</strong> – A dictionary specifying the dynamic recommender behavior of the deployment. The dictionary must contain epsilon, duration and pulse_responder_id. epsilon is a portion of interactions that are presented with random results and should be a number between 0 and 1. duration is the period for which recommendations are cached in milliseconds TODO &lt;Check this with Jay&gt; . pulse_responder_id is the uuid of a Dynamic Interaction configuration, if not Dynamic Interaction configuration is being linked set this to “”</p></li>
+<li><p><strong>whitelist</strong> – A dictionary of parameters specifying the location of the whitelist - a dataset of customers and the list of offers for which they are eligible. The data set should contain two fields; customer_key and white_list. customer_key is the unique customer identifier and white_list is a list of offer_names for which the customer is eligible. The dictionary must contain a datasource, database and collection. Datasource can be one of mongodb, cassandra or presto. Database and collection specify the location of the whitelist in the datasource.</p></li>
+<li><p><strong>model_selector</strong> – TODO &lt;Check purpose of lookup field with Jay&gt; A dictionary of parameters specifying the behavior of the model selector functionality. The model selector allows different models to be used based on the value of a field in the specified data set. The dictionary must contain datasource, database, table_collection, selector_column, selector and lookup.  Datasource can be one of mongodb, cassandra or presto. Database and collection specify the location of the model_selector dataset in the datasource. The selector_column is the name of the column in the dataset which is used to select between the different models. Lookup is a dictionary with the structure {“key”:”customer”,”value”:123 or ‘123’,”fields’’:”selector_column”}, where key is the field containing the unique customer identifier, value specified the type of the identifier as either a string (‘123’) or a number (123) and fields is the name of the selector column. Selector is the rule set used to choose models based on the values in the selector column. Selector is a dictionary with the format {“key_value_a”:[0],”key_value_b”:[1], …} where the keys are the values of the fields in the selector column used to choose different models and the values are the indices of the model to be used, with the order as specified in the model_configuration argument</p></li>
+<li><p><strong>pattern_selector</strong> – TODO &lt;Check pattern selector behavior with Jay&gt; A dictionary containing the parameters defining the behavior of the pattern selector. The dictionary contains two parameters; pattern and duration. pattern is a comma separated list of numbers which specifies the intervals at which customers are able to receive updated offers. duration defines the time intervals specified in the pattern parameter</p></li>
+<li><p><strong>parameter_access</strong> – A dictionary specifying the location from which customer data should be looked up. parameter_access should contain lookup, datasource, database, table_collection, lookup, lookup_defaults, fields, lookup_fields, create_virtual_variables and virtual_variables. lookup is a dictionary with the structure {“key”:”customer”,”value”:123 or ‘123’}, where key is the field containing the unique customer identifier, value specified the type of the identifier as either a string (‘123’) or a number (123). datasource can be one of mongodb, cassandra or presto. database and table_collection specify the location of the customer lookup in the datasource. fields is a comma separated list of the fields that should be read from the customer lookup. lookup_defaults are the default values to be used if the customer lookup fails, set to “” to not specify defaults. lookup_fields is the fields parameter in a list form ordered alphabetically create_virtual_variable is True if virtual variables are defined and False if not, virtual variables are defined by segmenting or combining fields from the customer lookup for us in the deployment. virtual_variables is a dictionary defining the virtual variables, which has the following form.</p></li>
+<li><p><strong>corpora</strong> – A list of additional datasets that are read by the deployment. corpora is a list of dictionaries where each dictionary gives the details of a data set. The dictionaries must have the following keys; database (mongodb or cassandra), db (the database containing the corpora), table (the collection containing the corpora), name (the name of the corpora used in the deployment) and type (static, dynamic or experiment). The dictionary can optionally contain a key field which, if present, is used as a lookup for each row or the corpora, where the default is to have the rows loaded as an array. The type field in the dictionary specifies how the corpora is loaded. A static type is loaded at deployment, a dynamic type is loaded at each prediction and experiment is a special type used for configuring network runtimes</p></li>
+<li><p><strong>logging_database</strong> – The mongo database where the deployment logs will be stored</p></li>
+<li><p><strong>logging_collection</strong> – The mongo collection where the predictions presented will be stored</p></li>
+<li><p><strong>logging_collection_response</strong> – The mongo collection where the customer responses to the predictions will be stored</p></li>
+<li><p><strong>mongo_connect</strong> – The connection string to the mongo database used by the deployment</p></li>
+<li><p><strong>mongo_server_port</strong> – The server and port in the mongo connection string</p></li>
+<li><p><strong>mongo_ecosystem_password</strong> – The password in the mongo connection string</p></li>
+<li><p><strong>mongo_ecosystem_user</strong> – The username in the mongo connection string</p></li>
+<li><p><strong>scoring_engine_path_dev</strong> – The url of the container to send the configuration to when the project status is experiment</p></li>
+<li><p><strong>scoring_engine_path_test</strong> – The url of the container to send the configuration to when the project status is validate</p></li>
+<li><p><strong>scoring_engine_path_prod</strong> – The url of the container to send the configuration to when the project status is production</p></li>
+<li><p><strong>models_path</strong> – The folder in the container where the models will be stored</p></li>
+<li><p><strong>data_path</strong> – The folder in the container where the generic data used by the container will be stored</p></li>
+<li><p><strong>build_server_path</strong> – The url of the build server to be used if customer logic is built into the container and a new container needs to be built containing said logic</p></li>
+<li><p><strong>git_repo_path</strong> – The git repo to store the customer logic</p></li>
+<li><p><strong>git_repo_path_branch</strong> – The branch to use for the repo specified in git_repo_path_branch</p></li>
+<li><p><strong>download_path</strong> – The url on Docker Hub where the built container will be pushed</p></li>
+<li><p><strong>extensive_validation</strong> – Indicator of whether potentially time consuming validation should be run before the deployment is created. This additional validation is checking whether the fields in the model_parameter are present in the linked collection and vice-versa</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The deployment configuration.</p>
+</dd>
+</dl>
+<p>EXAMPLES:</p>
+<p>Deployment creation example for an online learning configuration with an offer matrix, customer lookup, virtual variables
+and a dynamic corpora specifying a default offer.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">deployment_step</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">create_deployment</span><span class="p">(</span>
+     <span class="n">auth_local</span><span class="p">,</span>
+     <span class="n">project_id</span><span class="o">=</span><span class="n">project_id</span><span class="p">,</span>
+     <span class="n">deployment_id</span><span class="o">=</span><span class="s2">&quot;demo_online_learning&quot;</span><span class="p">,</span>
+     <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Demonstration of online learning deployment&quot;</span><span class="p">,</span>
+     <span class="n">plugin_pre_score_class</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+     <span class="n">plugin_post_score_class</span><span class="o">=</span><span class="s2">&quot;PostScoreDemoDynamic.java&quot;</span><span class="p">,</span>
+     <span class="n">version</span><span class="o">=</span><span class="s2">&quot;001&quot;</span><span class="p">,</span>
+     <span class="n">project_status</span><span class="o">=</span><span class="s2">&quot;experiment&quot;</span><span class="p">,</span>
+     <span class="n">scoring_engine_path_dev</span><span class="o">=</span><span class="s2">&quot;http://ecosystem-runtime:8091&quot;</span><span class="p">,</span>
+     <span class="n">multi_armed_bandit</span><span class="o">=</span><span class="p">{</span>
+                 <span class="s2">&quot;epsilon&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                 <span class="s2">&quot;duration&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                 <span class="s2">&quot;pulse_responder_uuid&quot;</span><span class="p">:</span> <span class="n">online_learning_uuid</span>
+                 <span class="p">},</span>
+     <span class="n">setup_offer_matrix</span><span class="o">=</span><span class="p">{</span>
+                 <span class="s2">&quot;offer_lookup_id&quot;</span><span class="p">:</span> <span class="s2">&quot;offer_name&quot;</span><span class="p">,</span>
+                 <span class="s2">&quot;database&quot;</span><span class="p">:</span> <span class="s2">&quot;recommender&quot;</span><span class="p">,</span>
+                 <span class="s2">&quot;table_collection&quot;</span><span class="p">:</span> <span class="s2">&quot;online_offer_matrix&quot;</span><span class="p">,</span>
+                 <span class="s2">&quot;datasource&quot;</span><span class="p">:</span> <span class="s2">&quot;mongodb&quot;</span>
+             <span class="p">},</span>
+     <span class="n">corpora</span><span class="o">=</span><span class="p">[{</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;default_offer&quot;</span><span class="p">,</span><span class="s2">&quot;database&quot;</span><span class="p">:</span><span class="s2">&quot;mongodb&quot;</span><span class="p">,</span><span class="s2">&quot;db&quot;</span><span class="p">:</span><span class="s2">&quot;recommender&quot;</span><span class="p">,</span><span class="s2">&quot;table&quot;</span><span class="p">:</span><span class="s2">&quot;online_default_offer&quot;</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;static&quot;</span><span class="p">}],</span>
+     <span class="n">parameter_access</span><span class="o">=</span><span class="p">{</span>
+                 <span class="s2">&quot;lookup&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span><span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;customer&quot;</span><span class="p">},</span>
+                 <span class="s2">&quot;create_virtual_variables&quot;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
+                 <span class="s2">&quot;lookup_defaults&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                 <span class="s2">&quot;database&quot;</span><span class="p">:</span> <span class="s2">&quot;recommender&quot;</span><span class="p">,</span>
+                 <span class="s2">&quot;table_collection&quot;</span><span class="p">:</span> <span class="s2">&quot;customer_feature_store&quot;</span><span class="p">,</span>
+                 <span class="s2">&quot;lookup_fields&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;customer&quot;</span><span class="p">,</span><span class="s2">&quot;revenue&quot;</span><span class="p">,</span><span class="s2">&quot;activity&quot;</span><span class="p">,</span><span class="s2">&quot;age&quot;</span><span class="p">,</span><span class="o">...</span><span class="p">],</span>
+                 <span class="s2">&quot;datasource&quot;</span><span class="p">:</span> <span class="s2">&quot;mongodb&quot;</span><span class="p">,</span>
+                 <span class="s2">&quot;virtual_variables&quot;</span><span class="p">:</span> <span class="p">[</span>
+                     <span class="p">{</span>
+                         <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;revenue_category&quot;</span><span class="p">,</span>
+                         <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;gt-500&quot;</span><span class="p">,</span>
+                         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;discretize&quot;</span><span class="p">,</span>
+                         <span class="s2">&quot;original_variable&quot;</span><span class="p">:</span> <span class="s2">&quot;revenue&quot;</span><span class="p">,</span>
+                         <span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                         <span class="s2">&quot;buckets&quot;</span><span class="p">:</span> <span class="p">[</span>
+                             <span class="p">{</span><span class="s2">&quot;from&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span><span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;lt-50&quot;</span><span class="p">,</span><span class="s2">&quot;to&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">},</span>
+                             <span class="p">{</span><span class="s2">&quot;from&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span><span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;50-250&quot;</span><span class="p">,</span><span class="s2">&quot;to&quot;</span><span class="p">:</span> <span class="mi">250</span><span class="p">},</span>
+                             <span class="p">{</span><span class="s2">&quot;from&quot;</span><span class="p">:</span> <span class="mi">250</span><span class="p">,</span><span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;250-500&quot;</span><span class="p">,</span><span class="s2">&quot;to&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">}</span>
+                         <span class="p">]</span>
+                     <span class="p">},</span>
+                     <span class="p">{</span>
+                         <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;activity_category&quot;</span><span class="p">,</span>
+                         <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;gt-15&quot;</span><span class="p">,</span>
+                         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;discretize&quot;</span><span class="p">,</span>
+                         <span class="s2">&quot;original_variable&quot;</span><span class="p">:</span> <span class="s2">&quot;activity&quot;</span><span class="p">,</span>
+                         <span class="s2">&quot;fields&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                         <span class="s2">&quot;buckets&quot;</span><span class="p">:</span> <span class="p">[</span>
+                             <span class="p">{</span><span class="s2">&quot;from&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span><span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;lt-15&quot;</span><span class="p">,</span><span class="s2">&quot;to&quot;</span><span class="p">:</span> <span class="mi">15</span><span class="p">}</span>
+                         <span class="p">]</span>
+                     <span class="p">}</span>
+                 <span class="p">]</span>
+             <span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="prediction.apis.deployment_management.create_project">
 <span class="sig-prename descclassname"><span class="pre">prediction.apis.deployment_management.</span></span><span class="sig-name descname"><span class="pre">create_project</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">auth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project_description</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">purpose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project_start_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project_end_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_science_lead</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_lead</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module_module_owner</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module_description</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module_created_by</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module_version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prediction.apis.deployment_management.create_project" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><blockquote>
+<div><p>Create a new project</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>auth</strong> – Token for accessing the ecosystem-server. Created using jwt_access.</p></li>
+<li><p><strong>project_id</strong> – The name of the project to be created.</p></li>
+<li><p><strong>project_description</strong> – Description of the project.</p></li>
+<li><p><strong>project_type</strong> – The type of the project.</p></li>
+<li><p><strong>purpose</strong> – The purpose of the project.</p></li>
+<li><p><strong>project_start_date</strong> – The start date of the project.</p></li>
+<li><p><strong>project_end_date</strong> – The end date of the project.</p></li>
+<li><p><strong>data_science_lead</strong> – The data science lead of the project.</p></li>
+<li><p><strong>data_lead</strong> – The data lead of the project.</p></li>
+<li><p><strong>module_name</strong> – The name of the module.</p></li>
+<li><p><strong>module_module_owner</strong> – The owner of the module.</p></li>
+<li><p><strong>module_description</strong> – The description of the module.</p></li>
+<li><p><strong>module_created_by</strong> – The creator of the module.</p></li>
+<li><p><strong>module_version</strong> – The version of the module.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="prediction.apis.deployment_management.get_api_endpoint_code_default">
@@ -803,7 +952,16 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="prediction.apis.ecosystem_generation_engine.process_push">
 <span class="sig-prename descclassname"><span class="pre">prediction.apis.ecosystem_generation_engine.</span></span><span class="sig-name descname"><span class="pre">process_push</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">auth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">json</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prediction.apis.ecosystem_generation_engine.process_push" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Push a deployment to the ecosystem-runtime</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>auth</strong> – Token for accessing the ecosystem-server. Created using jwt_access.</p></li>
+<li><p><strong>json</strong> – The deployment config to be pushed to the ecosystem-runtime.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 </section>
 <section id="module-prediction.apis.ecosystem_home">
@@ -891,13 +1049,79 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="prediction.apis.online_learning_management.create_online_learning">
 <span class="sig-prename descclassname"><span class="pre">prediction.apis.online_learning_management.</span></span><span class="sig-name descname"><span class="pre">create_online_learning</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">auth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_store_collection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_store_database</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options_store_database</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options_store_collection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contextual_variables_offer_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">score_connection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'http://ecosystem-runtime:8091'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">score_database</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ecosystem_meta'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">score_collection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'dynamic_engagement'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algorithm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ecosystem_rewards'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options_store_connection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'false'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_store_connection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contextual_variables_contextual_variable_one_from_data_source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contextual_variables_contextual_variable_one_lookup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contextual_variables_contextual_variable_one_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contextual_variables_contextual_variable_two_from_data_source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contextual_variables_contextual_variable_two_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contextual_variables_contextual_variable_two_lookup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contextual_variables_tracking_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contextual_variables_take_up</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_database_out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_collection_out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_threads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_collection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_userid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_contextual_variables</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_number_of_offers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_database</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_pulse_responder_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_find</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'{}'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_campaign</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_execution_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomisation_calendar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'None'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomisation_test_options_across_segment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomisation_processing_count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomisation_discount_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.75</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomisation_batch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'false'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomisation_prior_fail_reward</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomisation_cross_segment_epsilon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomisation_success_reward</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomisation_interaction_count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomisation_epsilon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomisation_prior_success_reward</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomisation_fail_reward</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomisation_max_reward</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomisation_cache_duration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomisation_processing_window</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">86400000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomisation_random_action</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomisation_decay_gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomisation_learning_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prediction.apis.online_learning_management.create_online_learning" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Create a new online learning configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>auth</strong> – Token for accessing the ecosystem-server. Created using the jwt_access package.</p></li>
+<li><p><strong>name</strong> – The name of the online learning configuration.</p></li>
+<li><p><strong>description</strong> – The description of the online learning configuration.</p></li>
+<li><p><strong>feature_store_collection</strong> – The collection containing the setup feature store.</p></li>
+<li><p><strong>feature_store_database</strong> – The database containing the setup feature store.</p></li>
+<li><p><strong>options_store_database</strong> – The database containing the options store.</p></li>
+<li><p><strong>options_store_collection</strong> – The collection containing the options store.</p></li>
+<li><p><strong>contextual_variables_offer_key</strong> – The key in the setup feature store collection that contains the offer.</p></li>
+<li><p><strong>score_connection</strong> – Used when batch processing is enabled. The connection string to the runtime engine to use for batch processing.</p></li>
+<li><p><strong>score_database</strong> – The database where the online learning configuration is stored</p></li>
+<li><p><strong>score_collection</strong> – The collection where the online learning configuration is stored</p></li>
+<li><p><strong>algorithm</strong> – The algorithm to use for the online learning configuration. Currently only “ecosystem_rewards” is supported.</p></li>
+<li><p><strong>options_store_connection</strong> – The connection string to the options store.</p></li>
+<li><p><strong>batch</strong> – A boolean indicating whether batch processing should be enabled.</p></li>
+<li><p><strong>feature_store_connection</strong> – The connection string to the setup feature store.</p></li>
+<li><p><strong>contextual_variables_contextual_variable_one_from_data_source</strong> – A boolean indicating whether the first contextual variable should be read from the deployment customer lookup.</p></li>
+<li><p><strong>contextual_variables_contextual_variable_one_name</strong> – The field in the setup feature store to be used for the first contextual variable.</p></li>
+<li><p><strong>contextual_variables_contextual_variable_one_lookup</strong> – The key in the deployment customer lookup that contains the first contextual variable.</p></li>
+<li><p><strong>contextual_variables_contextual_variable_two_name</strong> – The field in the setup feature store to be used for the second contextual variable.</p></li>
+<li><p><strong>contextual_variables_contextual_variable_two_lookup</strong> – The key in the deployment customer lookup that contains the second contextual variable.</p></li>
+<li><p><strong>contextual_variables_contextual_variable_two_from_data_source</strong> – A boolean indicating whether the second contextual variable should be read from the deployment customer lookup.</p></li>
+<li><p><strong>contextual_variables_tracking_key</strong> – The field in the setup feature store to be used for the tracking key.</p></li>
+<li><p><strong>contextual_variables_take_up</strong> – The field in the setup feature store to be used for the take-up.</p></li>
+<li><p><strong>batch_database_out</strong> – The database to store the batch output in.</p></li>
+<li><p><strong>batch_collection_out</strong> – The collection to store the batch output in.</p></li>
+<li><p><strong>batch_threads</strong> – The number of threads to use for batch processing.</p></li>
+<li><p><strong>batch_collection</strong> – The collection to read the batch data from.</p></li>
+<li><p><strong>batch_userid</strong> – The user to be passed to the batch runtime.</p></li>
+<li><p><strong>batch_contextual_variables</strong> – The contextual variables to be used in the batch processing.</p></li>
+<li><p><strong>batch_number_of_offers</strong> – The number of offers to be used in the batch processing.</p></li>
+<li><p><strong>batch_database</strong> – The database to read the batch data from.</p></li>
+<li><p><strong>batch_pulse_responder_list</strong> – The list of runtimes to be used in the batch processing.</p></li>
+<li><p><strong>batch_find</strong> – The query to be used to find the batch data.</p></li>
+<li><p><strong>batch_options</strong> – The options to be used in the batch processing.</p></li>
+<li><p><strong>batch_campaign</strong> – The campaign to be used in the batch processing.</p></li>
+<li><p><strong>batch_execution_type</strong> – The execution type to be used in the batch processing. Allowed values are “internal” and “external”.</p></li>
+<li><p><strong>randomisation_calendar</strong> – The calendar to be used.</p></li>
+<li><p><strong>randomisation_test_options_across_segment</strong> – Boolean variable indicating whether offers should be tested outside of their allowed contextual variable segments.</p></li>
+<li><p><strong>randomisation_processing_count</strong> – The number of interactions to be processed.</p></li>
+<li><p><strong>randomisation_discount_factor</strong> – The discount factor to be used in the randomisation.</p></li>
+<li><p><strong>randomisation_batch</strong> – Boolean variable indicating whether batch processing should be enabled.</p></li>
+<li><p><strong>randomisation_prior_fail_reward</strong> – The prior fail reward to be used in the randomisation.</p></li>
+<li><p><strong>randomisation_cross_segment_epsilon</strong> – The cross segment epsilon to be used in the randomisation.</p></li>
+<li><p><strong>randomisation_success_reward</strong> – The success reward to be used in the randomisation.</p></li>
+<li><p><strong>randomisation_interaction_count</strong> – The number of interactions to be used in the randomisation.</p></li>
+<li><p><strong>randomisation_epsilon</strong> – The epsilon to be used in the randomisation.</p></li>
+<li><p><strong>randomisation_prior_success_reward</strong> – The prior success reward to be used in the randomisation.</p></li>
+<li><p><strong>randomisation_fail_reward</strong> – The fail reward to be used in the randomisation.</p></li>
+<li><p><strong>randomisation_max_reward</strong> – The maximum reward to be used in the randomisation.</p></li>
+<li><p><strong>randomisation_cache_duration</strong> – The cache duration to be used in the randomisation.</p></li>
+<li><p><strong>randomisation_processing_window</strong> – The processing window to be used in the randomisation.</p></li>
+<li><p><strong>randomisation_random_action</strong> – The random action to be used in the randomisation.</p></li>
+<li><p><strong>randomisation_decay_gamma</strong> – The decay gamma to be used in the randomisation.</p></li>
+<li><p><strong>randomisation_learning_rate</strong> – The learning rate to be used in the randomisation.</p></li>
+<li><p><strong>replace</strong> – A boolean indicating whether the online learning configuration should be replaced if it already exists.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The UUID identifier for the online learning configuration which should be linked to the deployment for the project.</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="prediction.apis.online_learning_management.online_learning_ecosystem_rewards_setup_feature_store">
 <span class="sig-prename descclassname"><span class="pre">prediction.apis.online_learning_management.</span></span><span class="sig-name descname"><span class="pre">online_learning_ecosystem_rewards_setup_feature_store</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">auth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offer_db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offer_collection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offer_name_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contextual_variables</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">setup_feature_store_db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">setup_feature_store_collection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prediction.apis.online_learning_management.online_learning_ecosystem_rewards_setup_feature_store" title="Link to this definition">#</a></dt>
 <dd><blockquote>
-<div><p>Add contextual variables to a setup feature store for the ecosystem rewards dynamic recommender using a collection containing the relevant offers.</p>
+<div><p>Add contextual variables to a setup feature store for the ecosystem rewards dynamic recommender using a collection
+containing the relevant offers.</p>
 </div></blockquote>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -917,6 +1141,20 @@
 </section>
 <section id="module-prediction.apis.prediction_engine">
 <span id="prediction-apis-prediction-engine-module"></span><h2>prediction.apis.prediction_engine module<a class="headerlink" href="#module-prediction.apis.prediction_engine" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="prediction.apis.prediction_engine.add_pretrained_model">
+<span class="sig-prename descclassname"><span class="pre">prediction.apis.prediction_engine.</span></span><span class="sig-name descname"><span class="pre">add_pretrained_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">auth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prediction.apis.prediction_engine.add_pretrained_model" title="Link to this definition">#</a></dt>
+<dd><p>Add a pretrained h2o model to the ecosystem-server. The model zip file should be located in a models folder.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>auth</strong> – Token for accessing the ecosystem-server. Created using jwt_access.</p></li>
+<li><p><strong>model_name</strong> – The name of the model to be added to the ecosystem-server.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py function">
 <dt class="sig sig-object py" id="prediction.apis.prediction_engine.delete_analysis">
 <span class="sig-prename descclassname"><span class="pre">prediction.apis.prediction_engine.</span></span><span class="sig-name descname"><span class="pre">delete_analysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">auth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analysis_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prediction.apis.prediction_engine.delete_analysis" title="Link to this definition">#</a></dt>
@@ -955,7 +1193,17 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="prediction.apis.prediction_engine.download_project">
 <span class="sig-prename descclassname"><span class="pre">prediction.apis.prediction_engine.</span></span><span class="sig-name descname"><span class="pre">download_project</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">auth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prediction.apis.prediction_engine.download_project" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Create a module zip file from the project specified by project_id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>auth</strong> – Token for accessing the ecosystem-server. Created using jwt_access.</p></li>
+<li><p><strong>project_id</strong> – The name of the project to be converted to a module.</p></li>
+<li><p><strong>module_name</strong> – The name of the module specified in the project config.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="prediction.apis.prediction_engine.get_analysis_result">
@@ -1040,7 +1288,16 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="prediction.apis.prediction_engine.import_module">
 <span class="sig-prename descclassname"><span class="pre">prediction.apis.prediction_engine.</span></span><span class="sig-name descname"><span class="pre">import_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">auth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prediction.apis.prediction_engine.import_module" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Import a module to the ecosystem-server.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>auth</strong> – Token for accessing the ecosystem-server. Created using jwt_access.</p></li>
+<li><p><strong>module_id</strong> – The name of the module to be imported.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="prediction.apis.prediction_engine.save_analysis">
@@ -1277,7 +1534,17 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="prediction.apis.worker_file_service.download">
 <span class="sig-prename descclassname"><span class="pre">prediction.apis.worker_file_service.</span></span><span class="sig-name descname"><span class="pre">download</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">auth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">download_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prediction.apis.worker_file_service.download" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Download a file from the ecosystem-server</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>auth</strong> – Token for accessing the ecosystem-server. Created using jwt_access.</p></li>
+<li><p><strong>target_path</strong> – The path of the file to be downloaded.</p></li>
+<li><p><strong>download_path</strong> – The path where the downloaded file will be saved.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="prediction.apis.worker_file_service.file_delete">
@@ -1317,7 +1584,17 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="prediction.apis.worker_file_service.upload_file">
 <span class="sig-prename descclassname"><span class="pre">prediction.apis.worker_file_service.</span></span><span class="sig-name descname"><span class="pre">upload_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">auth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prediction.apis.worker_file_service.upload_file" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Upload a file to the ecosystem-server</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>auth</strong> – Token for accessing the ecosystem-server. Created using jwt_access.</p></li>
+<li><p><strong>path</strong> – The path of the file to be uploaded.</p></li>
+<li><p><strong>target_path</strong> – The path where the file will be uploaded.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 </section>
 <section id="module-prediction.apis.worker_google">
@@ -1378,7 +1655,13 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="prediction.apis.worker_h2o.generate_model_detail">
 <span class="sig-prename descclassname"><span class="pre">prediction.apis.worker_h2o.</span></span><span class="sig-name descname"><span class="pre">generate_model_detail</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">auth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prediction.apis.worker_h2o.generate_model_detail" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Process the models saved to the ecosystem-server and generate the model details for display on the ecosystem-workbench.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>auth</strong> – Token for accessing the ecosystem-server. Created using jwt_access.</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="prediction.apis.worker_h2o.get_frame">
@@ -1605,6 +1888,7 @@
 <li><a class="reference internal" href="#prediction.apis.data_management_engine.dump_document_database"><code class="docutils literal notranslate"><span class="pre">dump_document_database()</span></code></a></li>
 <li><a class="reference internal" href="#prediction.apis.data_management_engine.execute_mongo_db_script"><code class="docutils literal notranslate"><span class="pre">execute_mongo_db_script()</span></code></a></li>
 <li><a class="reference internal" href="#prediction.apis.data_management_engine.export_documents"><code class="docutils literal notranslate"><span class="pre">export_documents()</span></code></a></li>
+<li><a class="reference internal" href="#prediction.apis.data_management_engine.get_cassandra_to_mongo"><code class="docutils literal notranslate"><span class="pre">get_cassandra_to_mongo()</span></code></a></li>
 <li><a class="reference internal" href="#prediction.apis.data_management_engine.get_data"><code class="docutils literal notranslate"><span class="pre">get_data()</span></code></a></li>
 <li><a class="reference internal" href="#prediction.apis.data_management_engine.get_data_aggregate"><code class="docutils literal notranslate"><span class="pre">get_data_aggregate()</span></code></a></li>
 <li><a class="reference internal" href="#prediction.apis.data_management_engine.get_data_sort"><code class="docutils literal notranslate"><span class="pre">get_data_sort()</span></code></a></li>
@@ -1714,6 +1998,7 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#module-prediction.apis.prediction_engine">prediction.apis.prediction_engine module</a><ul>
+<li><a class="reference internal" href="#prediction.apis.prediction_engine.add_pretrained_model"><code class="docutils literal notranslate"><span class="pre">add_pretrained_model()</span></code></a></li>
 <li><a class="reference internal" href="#prediction.apis.prediction_engine.delete_analysis"><code class="docutils literal notranslate"><span class="pre">delete_analysis()</span></code></a></li>
 <li><a class="reference internal" href="#prediction.apis.prediction_engine.delete_model"><code class="docutils literal notranslate"><span class="pre">delete_model()</span></code></a></li>
 <li><a class="reference internal" href="#prediction.apis.prediction_engine.delete_prediction"><code class="docutils literal notranslate"><span class="pre">delete_prediction()</span></code></a></li>

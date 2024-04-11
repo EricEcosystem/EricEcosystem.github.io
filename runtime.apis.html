@@ -313,7 +313,39 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="runtime.apis.predictor_engine.invocations">
 <span class="sig-prename descclassname"><span class="pre">runtime.apis.predictor_engine.</span></span><span class="sig-name descname"><span class="pre">invocations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">auth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">json</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#runtime.apis.predictor_engine.invocations" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Call the invocations endpoint of the ecosystem-runtime. This is the generic endpoint for making predictions using
+the ecosystem-runtime.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>auth</strong> – Token for accessing the ecosystem-runtime. Created using jwt_access.</p></li>
+<li><p><strong>json</strong> – The parameters to be passed to the invocations api.</p></li>
+</ul>
+</dd>
+</dl>
+<p>EXAMPLES:</p>
+<p>Call the invocations endpoint for a deployment with the deployment_id of “demo_deployment” and the customer lookup
+of 1234567.
+.. code-block:: python</p>
+<blockquote>
+<div><dl>
+<dt>offer_response = o.invocations(</dt><dd><blockquote>
+<div><p>auth,
+{
+“campaign”: “demo_deployment”,
+“subcampaign”: “none”,
+“channel”: “notebooks”,
+“customer”: 1234567,
+“userid”: “ecosystem”,
+“numberoffers”: 4,
+“params”: “{}”
+}</p>
+</div></blockquote>
+<p>)</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="runtime.apis.predictor_engine.model_detail">

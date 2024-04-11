@@ -276,6 +276,7 @@
 <li class="toctree-l3"><a class="reference internal" href="prediction.apis.html#prediction.apis.data_management_engine.dump_document_database"><code class="docutils literal notranslate"><span class="pre">dump_document_database()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="prediction.apis.html#prediction.apis.data_management_engine.execute_mongo_db_script"><code class="docutils literal notranslate"><span class="pre">execute_mongo_db_script()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="prediction.apis.html#prediction.apis.data_management_engine.export_documents"><code class="docutils literal notranslate"><span class="pre">export_documents()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="prediction.apis.html#prediction.apis.data_management_engine.get_cassandra_to_mongo"><code class="docutils literal notranslate"><span class="pre">get_cassandra_to_mongo()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="prediction.apis.html#prediction.apis.data_management_engine.get_data"><code class="docutils literal notranslate"><span class="pre">get_data()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="prediction.apis.html#prediction.apis.data_management_engine.get_data_aggregate"><code class="docutils literal notranslate"><span class="pre">get_data_aggregate()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="prediction.apis.html#prediction.apis.data_management_engine.get_data_sort"><code class="docutils literal notranslate"><span class="pre">get_data_sort()</span></code></a></li>
@@ -385,6 +386,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="prediction.apis.html#module-prediction.apis.prediction_engine">prediction.apis.prediction_engine module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="prediction.apis.html#prediction.apis.prediction_engine.add_pretrained_model"><code class="docutils literal notranslate"><span class="pre">add_pretrained_model()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="prediction.apis.html#prediction.apis.prediction_engine.delete_analysis"><code class="docutils literal notranslate"><span class="pre">delete_analysis()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="prediction.apis.html#prediction.apis.prediction_engine.delete_model"><code class="docutils literal notranslate"><span class="pre">delete_model()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="prediction.apis.html#prediction.apis.prediction_engine.delete_prediction"><code class="docutils literal notranslate"><span class="pre">delete_prediction()</span></code></a></li>
@@ -576,6 +578,16 @@
 <dt class="sig sig-object py" id="prediction.jwt_access.Authenticate">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">prediction.jwt_access.</span></span><span class="sig-name descname"><span class="pre">Authenticate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#prediction.jwt_access.Authenticate" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Logs into the ecosystem server and retrieves an access token for authentication.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>api_address</strong> – The url of the ecosystem server.</p></li>
+<li><p><strong>username</strong> – The username of the user.</p></li>
+<li><p><strong>password</strong> – The password of the user.</p></li>
+</ul>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="prediction.jwt_access.Authenticate.get_access_token">
 <span class="sig-name descname"><span class="pre">get_access_token</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#prediction.jwt_access.Authenticate.get_access_token" title="Link to this definition">#</a></dt>
