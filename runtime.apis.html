@@ -255,7 +255,24 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="runtime.apis.data_management_engine.get_data">
 <span class="sig-prename descclassname"><span class="pre">runtime.apis.data_management_engine.</span></span><span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">auth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">database</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">collection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projections</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#runtime.apis.data_management_engine.get_data" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Get data from a MongoDB collection using the find syntax.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>auth</strong> – Token for accessing the ecosystem-runtime. Created using access.</p></li>
+<li><p><strong>database</strong> – Name of the database.</p></li>
+<li><p><strong>collection</strong> – Name of the collection.</p></li>
+<li><p><strong>field</strong> – The mongodb find search query.</p></li>
+<li><p><strong>limit</strong> – The number of documents to return.</p></li>
+<li><p><strong>projections</strong> – The fields to include or exclude in mongodb find query format.</p></li>
+<li><p><strong>skip</strong> – The number of documents to skip.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of all documents matching the find criteria.</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="runtime.apis.data_management_engine.get_data_sort">
